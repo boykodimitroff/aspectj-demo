@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 @Configuration
 public class SpotifyAspect {
 
-    @Pointcut("execution(* eu.dreamix.rest.RestController.callSpotify(..))")
+    @Pointcut("execution(* eu.dreamix.rest.SpotifyController.callSpotify(..))")
     public void around() {}
 
     @Around("around()")
