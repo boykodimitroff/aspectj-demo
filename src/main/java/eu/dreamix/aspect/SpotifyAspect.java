@@ -14,9 +14,10 @@ import org.springframework.stereotype.Component;
 public class SpotifyAspect {
 
     @Pointcut("execution(* eu.dreamix.rest.SpotifyController.callSpotify(..))")
-    public void around() {}
+    public void inSpotifyController() {
+    }
 
-    @Around("around()")
+    @Around("inSpotifyController()")
     public ResponseEntity mockSpotify() {
         return ResponseEntity.ok("Mocked Spotify call");
     }
